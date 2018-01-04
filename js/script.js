@@ -36,16 +36,16 @@ function setGameElements() {
   switch(gameState) {
     case 'started':
         newGameElem.style.display = 'none';
-        pickElem.style.display = 'block';
-        resultsElem.style.display = 'block';
+        //pickElem.style.display = 'block';
+        //resultsElem.style.display = 'block';
       break;
     case 'ended':
         newGameBtn.innerText = 'Jeszcze raz';
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
-        pickElem.style.display = 'none';
-        resultsElem.style.display = 'none';
+        //pickElem.style.display = 'none';
+        //resultsElem.style.display = 'none';
   }
 }
 
@@ -119,11 +119,17 @@ function checkRoundWinner(playerPick, computerPick) {
 			player.score++;
 			setGamePoints();
 			setGameWinner();
-		} else if (winnerIs == 'computer') {
+		} /*else if (winnerIs = 'computer') {
 			computerResultElem.innerHTML = "Win!";
 			computer.score++;
 			setGamePoints();
 			setGameWinner();
+		} */
+			else {
+				computerResultElem.innerHTML = "Win!";
+				computer.score++;
+				setGamePoints();
+				setGameWinner();
 		}
 }
 

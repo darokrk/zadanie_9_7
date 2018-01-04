@@ -20,7 +20,7 @@
     "build:autoprefixer": "autoprefixer-cli css/style.css",
     "watch": "parallelshell  \"npm run watch:sassprefixer\" \"npm run watch:browser-sync\" ",
     "watch:sassprefixer": "onchange sass/*.scss -- parallelshell \"npm run build:sass\" \"npm run build:autoprefixer\" ",
-    "watch:browser-sync": "browser-sync start --server --files css/*.css *.html"
+    "watch:browser-sync": "browser-sync start --server --files \"css/*.css\" \"*.html\" --serveStatic \"./\""
   },
   "keywords": [],
   "author": "",
