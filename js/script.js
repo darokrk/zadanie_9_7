@@ -29,23 +29,23 @@ var gameState = 'notStarted',  //started // ended
 
 var newGameElem = document.getElementById('js-newGameElement'),
 	pickElem = document.getElementById('js-playerPickElement'),
-	resultsElem = document.getElementById('js-resultTableElement');
+	resultsElem = document.getElementById('js-resultsTableElement');
 
 
 function setGameElements() {
   switch(gameState) {
     case 'started':
         newGameElem.style.display = 'none';
-        //pickElem.style.display = 'block';
-        //resultsElem.style.display = 'block';
+        pickElem.style.display = 'block';
+        resultsElem.style.display = 'block';
       break;
     case 'ended':
         newGameBtn.innerText = 'Jeszcze raz';
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
-        //pickElem.style.display = 'none';
-        //resultsElem.style.display = 'none';
+        pickElem.style.display = 'none';
+        resultsElem.style.display = 'none';
   }
 }
 
@@ -104,17 +104,17 @@ function checkRoundWinner(playerPick, computerPick) {
 
 	var winnerIs = 'player';
 
-		if (playerPick == computerPick) {
+		if (playerPick === computerPick) {
 			winnerIs = 'noone'; // remis
 		} else if (
-			(computerPick == 'rock' && playerPick == 'scissors') ||
-			(computerPick == 'scissors' && playerPick == 'paper') ||
-			(computerPick == 'paper' && playerPick == 'rock')) {
+			(computerPick === 'rock' && playerPick === 'scissors') ||
+			(computerPick === 'scissors' && playerPick === 'paper') ||
+			(computerPick === 'paper' && playerPick === 'rock')) {
 
 			winnerIs = 'computer';
 		}
 
-		if (winnerIs == 'player') {
+		if (winnerIs === 'player') {
 			playerResultElem.innerHTML = "Win!";
 			player.score++;
 			setGamePoints();
@@ -143,11 +143,11 @@ function setGamePoints() {
 // function checkout(ktory z graczy zdobyl 10pkt)
 
 function setGameWinner() {
-	if (computer.score == 10) {
+	if (computer.score === 10) {
 		alert('Computer won :((');
 		gameState = 'ended';
 		setGameElements();
-	} else if (player.score == 10) {
+	} else if (player.score === 10) {
 		alert('You won !!!');
 		gameState = 'ended';
 		setGameElements();
