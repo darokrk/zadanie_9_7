@@ -47,7 +47,9 @@ function setGameElements() {
         pickElem.style.display = 'none';
         resultsElem.style.display = 'none';
   }
+  	console.log(gameState);
 }
+
 
 // newGame function(rozpoczecie gry)
 
@@ -65,14 +67,8 @@ function newGame() {
     playerNameElem.innerHTML = player.name;
     setGamePoints();
   }
-
+  	console.log(player.name);
 } 
-
-// player choice(wybor gracza)
-
-function playerPick(playerPick) {
-	console.log(playerPick);
-}
 
 // draw computer choice(losowanie wyboru komputera)
 
@@ -95,6 +91,7 @@ function playerPick(playerPick) {
 	computerPickElem.innerHTML = computerPick;
 
 	checkRoundWinner(playerPick, computerPick);
+	console.log(playerPick, computerPick);
 } 
 
 // games logic and points add(logika gry i przyznawanie punktow)
