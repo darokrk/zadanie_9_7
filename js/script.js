@@ -40,7 +40,7 @@ function setGameElements() {
         resultsElem.style.display = 'block';
       break;
     case 'ended':
-        newGameBtn.innerText = 'Jeszcze raz';
+        newGameBtn.innerText = 'Play again';
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
@@ -58,7 +58,7 @@ var playerPointsElem = document.getElementById('js-playerPoints'),
     computerPointsElem = document.getElementById('js-computerPoints');
 
 function newGame() {
-  player.name = prompt('Please enter your name', 'imię gracza');
+  player.name = prompt('Please enter your name', 'player name');
   if (player.name) {
     player.score = computer.score = 0;
     gameState = 'started';
@@ -85,6 +85,7 @@ var playerPickElem = document.getElementById('js-playerPick'),
     computerResultElem = document.getElementById('js-computerResult');
 
 function playerPick(playerPick) {
+  if (player.name) {
 	var computerPick = getComputerPick();
 
 	playerPickElem.innerHTML = playerPick;
@@ -92,6 +93,7 @@ function playerPick(playerPick) {
 
 	checkRoundWinner(playerPick, computerPick);
 	console.log(playerPick, computerPick);
+  }
 } 
 
 // games logic and points add(logika gry i przyznawanie punktow)
